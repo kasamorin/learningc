@@ -42,7 +42,7 @@ gcc -std=gnu23 -g <file>.c -o <file>.out
 
 ### .md 参考手册编辑规范
 
-详见 `AI-md-guide.md`（被 `.gitignore` 屏蔽，核心规则已内联在 `CLAUDE.md` 中）。要点：
+详见 `AI-MD-GUIDE.md`（核心规则已内联在 `CLAUDE.md` 中）。要点：
 - 禁止 GFM 表格，用 `-` 无序列表代替
 - 代码示例用围栏代码块 ` ```c ``` `
 - 每个板块末尾加 `> ⚠️ 注意事项` 引用块
