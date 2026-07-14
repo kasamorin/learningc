@@ -10,18 +10,21 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```
 .
-├── singleFiles/src/        # 所有 .c 源文件
+├── src/singleFiles/        # 所有 .c 源文件
 │   ├── hello.c             # printf 占位符用法
-│   ├── operator.c          # 算术运算符、赋值简写、自增自减
-│   ├── relationalOperator.c  # 关系运算符
-│   ├── logicalOperator.c   # 逻辑运算符（短路求值）
-│   ├── bitwiseOperator.c   # 位运算符
-│   ├── commaOperator.c     # 逗号运算符
-│   └── orderOfOperations.c # 运算优先级
+│   ├── operator/           # 运算符相关源文件
+│   │   ├── operator.c
+│   │   ├── relationalOperator.c
+│   │   ├── logicalOperator.c
+│   │   ├── bitwiseOperator.c
+│   │   ├── commaOperator.c
+│   │   └── orderOfOperations.c
+│   ├── flowControl/        # 控制流相关源文件
+│   │   └── if.c
+│   └── output/             # 编译产物（gitignore）
 ├── manual/                 # 所有 .md 参考手册
 │   ├── 占位符.md           # hello.c 的参考手册
-│   └── 运算符.md           # 其余六个 .c 的综合运算符手册
-├── singleFiles/output/     # 编译产物（gitignore）
+│   └── 运算符.md           # 运算符相关源文件的综合手册
 ├── CLAUDE.md
 ├── AI-MD-GUIDE.md          # .md 手册编辑规范（被 .gitignore 屏蔽）
 ├── COPYING
@@ -36,10 +39,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 # 编译
-gcc -std=gnu23 -g singleFiles/src/<file>.c -o singleFiles/output/<file>.out
+gcc -std=gnu23 -g src/singleFiles/<主题>/<file>.c -o src/singleFiles/output/<file>.out
 
 # 运行
-./singleFiles/output/<file>.out
+./src/singleFiles/output/<file>.out
 ```
 
 编译产物 `*.out` 已在 `.gitignore` 中忽略。
@@ -48,13 +51,13 @@ gcc -std=gnu23 -g singleFiles/src/<file>.c -o singleFiles/output/<file>.out
 
 `.c` 源文件与 `.md` 手册的对应关系：
 
-- `hello.c` → `占位符.md`：printf 占位符用法（宽度、精度、`*` 传参、`%.*s` 等）
-- `operator.c` → `运算符.md` 一～三：算术运算符、赋值简写、自增自减（`++i`/`i++`）
-- `relatiionalOperator.c` → `运算符.md` 四：关系运算符（`==` vs `=` 陷阱、连用陷阱）
-- `logicalOperator.c` → `运算符.md` 五：逻辑运算符（`&&`/`||`/`!`、短路求值）
-- `bitwiseOperator.c` → `运算符.md` 六：位运算符（`~` `&` `|` `^` `<<` `>>` 及简写形式）
-- `commaOperator.c` → `运算符.md` 七：逗号运算符（多表达式同行、返回最后一个表达式的值、优先级最低）
-- `orderOfOperations.c` → `运算符.md` 八：运算优先级（优先级顺序、结合性、圆括号）
+- `src/singleFiles/hello.c` → `manual/占位符.md`：printf 占位符用法
+- `src/singleFiles/operator/operator.c` → `manual/运算符.md` 一～三：算术运算符、赋值简写、自增自减
+- `src/singleFiles/operator/relationalOperator.c` → `manual/运算符.md` 四：关系运算符
+- `src/singleFiles/operator/logicalOperator.c` → `manual/运算符.md` 五：逻辑运算符（短路求值）
+- `src/singleFiles/operator/bitwiseOperator.c` → `manual/运算符.md` 六：位运算符
+- `src/singleFiles/operator/commaOperator.c` → `manual/运算符.md` 七：逗号运算符
+- `src/singleFiles/operator/orderOfOperations.c` → `manual/运算符.md` 八：运算优先级
 
 ## .md 参考手册编辑规范
 

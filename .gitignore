@@ -1,4 +1,6 @@
 *.out
 *.bak
 AI-MD-GUIDE.md
-singleFiles/output
+src/singleFiles/output
+run
+uninstall-run
