@@ -38,5 +38,29 @@ int main(void)
         "}\n"
     );
     printf("上面的示例虽然是无限循环,但是循环体内部可以用break语句跳出循环\n");
+
+    printf("do...while语句\n");
+    printf("do...while结构是while的变体，会先执行一次循环体，然后再判断是否满足条件。如果满足的话，就继续执行循环体，否则跳出循环\n");
+    printf("例如:\n");
+    printf(
+        "do statement;\n"
+        "while (expression);\n"
+    );
+    int i;
+    i = 20;
+    do i--;
+    while (i > 0);
+    printf("上面代码中，不管条件expression是否成立"
+        "，循环体statement至少会执行一次。每次statement执行完毕"
+        "，就会判断一次expression，决定是否结束循环\n");
+    printf("%i\n" , i);
+    printf("do也可以加大括号来执行多个语句\n");
+    i = 20;
+    do
+    {
+        i--;
+        printf("%i\n" , i);
+    } while (i > 20);
+
     return 0;
 }
