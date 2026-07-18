@@ -1,0 +1,2 @@
+1.aiFirst
+2.characterType

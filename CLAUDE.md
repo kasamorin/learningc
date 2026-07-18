@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 项目结构
 
-- `src/singleFiles/`：所有 `.c` 源文件。`hello.c` 在根下，其余按主题分子目录（`operator/`、`flowControl/` 等）
+- `src/singleFiles/`：所有 `.c` 源文件。`hello.c` 在根下，其余按主题分子目录（`operator/`、`flowControl/`、`types/` 等）
 - `src/singleFiles/output/`：编译产物 `*.out`，已在 `.gitignore` 中忽略
 - `manual/`：`.md` 参考手册，每个主题目录的所有 `.c` 对应一份综合手册
 - `CLAUDE.md`：本文件
@@ -50,7 +50,8 @@ gcc -std=gnu23 -g src/singleFiles/<主题>/<file>.c -o src/singleFiles/output/<f
 
 - `hello.c` → `manual/占位符.md`：printf 占位符用法
 - `operator/` → `manual/运算符.md`：算术、赋值简写、自增自减、关系、逻辑、位运算、逗号、优先级
-- `flowControl/` → `manual/流程控制.md`：if/else 条件判断与悬垂匹配、switch 穿透、三元运算符 `?:`、while 循环、for 循环、break 语句
+- `flowControl/` → `manual/流程控制.md`：if/else 条件判断与悬垂匹配、switch 穿透、三元运算符 `?:`、while 循环、for 循环、break 语句、continue 语句、goto 语句
+- `types/` → `manual/数据类型.md`：数据类型概述、字符类型（char）与整数互换、ASCII、转义字符
 
 ## .md 参考手册编辑规范
 
