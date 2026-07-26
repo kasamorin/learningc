@@ -123,6 +123,14 @@ int main(void)
         "%%#X: 带0X前缀的十六进制整数\n"
         , 0377 , 0xf
     );
-
+    /*
+    int x = 100;
+    printf("dec = %d\n", x); // 100
+    printf("octal = %o\n", x); // 144
+    printf("hex = %x\n", x); // 64
+    printf("octal = %#o\n", x); // 0144
+    printf("hex = %#x\n", x); // 0x64
+    printf("hex = %#X\n", x); // 0X64
+    */
     return 0;
 }

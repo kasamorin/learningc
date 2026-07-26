@@ -1,3 +1,4 @@
 1.aiFirst
 2.characterType
-3.integerType
+3.floatingPointType
+4.integerType
